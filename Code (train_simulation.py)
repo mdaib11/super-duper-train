@@ -1,0 +1,24 @@
+import time
+
+class Train:
+    def __init__(self, name, speed=0):
+        self.name = name
+        self.speed = speed
+    
+    def accelerate(self, amount):
+        self.speed += amount
+        print(f"{self.name} accelerated to {self.speed} km/h")
+    
+    def brake(self, amount):
+        self.speed = max(0, self.speed - amount)
+        print(f"{self.name} slowed down to {self.speed} km/h")
+
+# Simulation
+train = Train("Super Duper Express")
+train.accelerate(50)
+time.sleep(1)
+train.accelerate(80)
+time.sleep(1)
+train.brake(30)
+time.sleep(1)
+train.brake(100)
